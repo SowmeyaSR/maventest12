@@ -1,15 +1,11 @@
-name: mavantest application
-
-on:
-  workflow_dispatch:
-    inputs:
-      username:
-        description: "Sowmeya SR"
-        required: "true"
-        
-
+name: build
+on: push
 jobs:
-  build:
-    runs-on: ubunutu_latest
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-    - run: echo "test"
+      - id: set-matrix
+        run: echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+  
