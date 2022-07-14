@@ -1,8 +1,12 @@
 name: mavantest application
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      username:
+        description: "Sowmeya SR"
+        required: "true"
+        
 
 jobs:
   build:
