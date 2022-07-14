@@ -1,0 +1,11 @@
+name: mavantest application
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubunutu_latest
+    steps:
+    - run: echo "test"
