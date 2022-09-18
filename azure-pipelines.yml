@@ -1,6 +1,8 @@
 trigger:
 - none
 
+
+//test2
 pool:
   vmImage: ubuntu-latest
 
